@@ -26,7 +26,34 @@ function Home() {
     <div>
       <Navbar></Navbar>
       <div className="container">
-        <Card />
+        {genreData !== []
+          ? genreData.map((data) => {
+              return (
+                <div className="row mb-3">
+                  <div key={data._id} className="fs-3 m-3">
+                    {data.genreName}
+                  </div>
+                  <hr />
+                  {bookData !== [] ? (
+                    bookData
+                      .filter((item) => item.genreName === data.genreName)
+                      .map((fitlerItems) => {
+                        return (
+                          <div
+                            id={fitlerItems._id}
+                            className="col-12 col-md-6 col-lg-3"
+                          >
+                            <Card></Card>
+                          </div>
+                        );
+                      })
+                  ) : (
+                    <div>No such Element exists</div>
+                  )}
+                </div>
+              );
+            })
+          : ""}
       </div>
     </div>
   );

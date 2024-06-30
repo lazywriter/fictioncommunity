@@ -1,7 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Navbar() {
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    localStorage.removeItem("authToken");
+    navigate("/login");
+  };
+
   return (
     <nav>
       <nav className="navbar navbar-expand-lg bg-light">
@@ -27,11 +33,15 @@ function Navbar() {
                   Home
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/account">
-                  Your Account
-                </Link>
-              </li>
+              {localStorage.getItem("authToken") ? (
+                <li className="nav-item">
+                  <Link className="nav-link" to="/account">
+                    Your Account
+                  </Link>
+                </li>
+              ) : (
+                ""
+              )}
             </ul>
             <form className="d-flex" role="search">
               <input
@@ -40,16 +50,30 @@ function Navbar() {
                 placeholder="Search"
                 aria-label="Search"
               />
-              <Link to="/createuser">
-                <button className="btn btn-outline-success" type="submit">
-                  Signup
-                </button>
-              </Link>
-
-              <button className="btn btn-outline-success" type="submit">
-                Login
-              </button>
             </form>
+            <div>
+              {!localStorage.getItem("authToken") ? (
+                <div>
+                  <Link to="/createuser">
+                    <button className="btn btn-outline-success" type="submit">
+                      Signup
+                    </button>
+                  </Link>
+                  <Link to="/login">
+                    <button className="btn btn-outline-success" type="submit">
+                      Login
+                    </button>
+                  </Link>{" "}
+                </div>
+              ) : (
+                <div
+                  className="btn bg-danger text-white mx-2"
+                  onClick={handleLogout}
+                >
+                  Logout
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </nav>
