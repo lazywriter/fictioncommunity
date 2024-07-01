@@ -17,6 +17,7 @@ mongoDB();
 app.use(express.json());
 app.use("/api", require("./routes/CreateUser"));
 app.use("/api", require("./routes/DisplayData"));
+app.use("/api", require("./routes/CreateBook"));
 
 app.get("/", (req, res) => {
   res.send("Hello World!");

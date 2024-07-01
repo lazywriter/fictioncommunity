@@ -14,6 +14,7 @@ function Home() {
       },
     });
     response = await response.json();
+    console.log(response);
     setgenreData(response[1]);
     setbookData(response[0]);
   };
@@ -43,7 +44,7 @@ function Home() {
                             id={fitlerItems._id}
                             className="col-12 col-md-6 col-lg-3"
                           >
-                            <Card></Card>
+                            <Card bookData={fitlerItems}></Card>
                           </div>
                         );
                       })

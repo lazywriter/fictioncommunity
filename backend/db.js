@@ -11,7 +11,7 @@ const mongoDB = async () => {
         console.log(err);
       } else {
         console.log("connected");
-        const fetched_data = mongoose.connection.db.collection("book_data");
+        const fetched_data = mongoose.connection.db.collection("books");
         fetched_data.find({}).toArray((err, data) => {
           const genres = mongoose.connection.db.collection("genres");
           genres.find({}).toArray((err, genData) => {
