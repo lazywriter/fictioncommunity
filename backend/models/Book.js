@@ -12,6 +12,18 @@ const bookSchema = new Schema({
   authorName: {
     type: String,
   },
+  lenderId: {
+    type: String,
+    required: true,
+  },
+  lenderName: {
+    type: String,
+    required: true,
+  },
+  lenderEmail: {
+    type: String,
+    required: true,
+  },
   description: {
     type: String,
   },

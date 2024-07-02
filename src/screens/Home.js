@@ -27,7 +27,7 @@ function Home() {
     <div>
       <Navbar></Navbar>
       <div className="container">
-        {genreData !== []
+        {genreData.length !== 0
           ? genreData.map((data) => {
               return (
                 <div className="row mb-3">
@@ -35,7 +35,7 @@ function Home() {
                     {data.genreName}
                   </div>
                   <hr />
-                  {bookData !== [] ? (
+                  {bookData.length !== 0 ? (
                     bookData
                       .filter((item) => item.genreName === data.genreName)
                       .map((fitlerItems) => {

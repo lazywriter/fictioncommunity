@@ -5,14 +5,19 @@ function Card(props) {
     <div>
       <div className="card" style={{ width: "18rem" }}>
         <img
-          src="..."
+          src={`./book-pics/${props.bookData.imgSource}.jpg`}
           className="card-img-top"
           alt="..."
-          style={{ height: "120px", objectFit: "fill" }}
+          style={{ height: "350px", objectFit: "cover" }}
         />
         <div className="card-body">
-          <h5 className="card-title">{props.bookData.title}</h5>
-          <p className="card-text"></p>
+          <h3 className="card-title">{props.bookData.title}</h3>
+          <h5 className="card-title lead">{props.bookData.authorName}</h5>
+          <hr />
+          <p className="card-text">{props.bookData.description}</p>
+          <strong className="card-title">
+            Rent per week : Rs.{props.bookData.rate}
+          </strong>
         </div>
       </div>
     </div>

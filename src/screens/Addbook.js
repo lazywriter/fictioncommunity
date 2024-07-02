@@ -7,6 +7,7 @@ function Addbook() {
     imgSource: "",
     title: "",
     authorName: "",
+    lenderId: "",
     description: "",
     genreName: "",
     rate: 0,
@@ -19,6 +20,7 @@ function Addbook() {
     let response = await fetch("http://localhost:5000/api/createbook", {
       method: "POST",
       headers: {
+        Authorization: `Bearer ${localStorage.getItem("authToken")}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
@@ -94,10 +96,11 @@ function Addbook() {
               type="text"
               className="form-control"
               name="genreName"
-              value={bookData.genreNameName}
+              value={bookData.genreName}
               onChange={onChange}
             />
           </div>
+
           <div className="mb-3">
             <label htmlFor="exampleInputEmail1" className="form-label">
               Description
