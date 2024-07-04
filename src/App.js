@@ -6,6 +6,7 @@ import Login from "./screens/Login";
 import Signup from "./screens/Signup";
 import Account from "./screens/Account";
 import Addbook from "./screens/Addbook";
+import BookReview from "./screens/BookReview";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="/createuser" element={<Signup />} />
         <Route exact path="/account" element={<Account />} />
         <Route exact path="/addbook" element={<Addbook />} />
+        <Route exact path="/reviews/:bookId" element={<BookReview />} />
       </Routes>
     </Router>
   );

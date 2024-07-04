@@ -28,6 +28,7 @@ app.use("/api", require("./routes/CreateUser"));
 app.use("/api", require("./routes/DisplayData"));
 app.use("/api", require("./routes/CreateBook"));
 app.use("/api", require("./routes/UserData"));
+app.use("/api", require("./routes/BookData"));
 
 app.get("/", (req, res) => {
   res.send("Hello World!");

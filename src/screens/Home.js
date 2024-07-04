@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Card from "../components/Card";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [genreData, setgenreData] = useState([]);
@@ -44,7 +45,12 @@ function Home() {
                             id={fitlerItems._id}
                             className="col-12 col-md-6 col-lg-3"
                           >
-                            <Card bookData={fitlerItems}></Card>
+                            <Link
+                              to={`reviews/${fitlerItems._id}`}
+                              style={{ textDecoration: "none" }}
+                            >
+                              <Card bookData={fitlerItems}></Card>
+                            </Link>
                           </div>
                         );
                       })
