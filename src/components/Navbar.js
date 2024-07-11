@@ -14,8 +14,8 @@ function Navbar() {
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
             <img
-              src="./nav-logo.png"
-              alt="Navbar"
+              src={`${process.env.PUBLIC_URL}/nav-logo.png`}
+              alt="Fiction Community"
               style={{ height: "4em", width: "8em" }}
             ></img>
           </Link>
@@ -71,7 +71,7 @@ function Navbar() {
                 </div>
               ) : (
                 <div
-                  className="btn bg-danger text-white mx-2"
+                  className="btn btn-outline-danger text-danger mx-2"
                   onClick={handleLogout}
                 >
                   Logout

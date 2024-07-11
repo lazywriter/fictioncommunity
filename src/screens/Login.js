@@ -76,7 +76,7 @@ function Login() {
         </button>
         <Link to="/createuser" className="m-3 btn btn-outline-success">
           {" "}
-          Already a user ?
+          I'm New
         </Link>
       </form>
     </div>
