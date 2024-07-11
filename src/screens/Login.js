@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 function Login() {
   const [credentials, setcredentials] = useState({
     email: "",
@@ -36,6 +36,13 @@ function Login() {
   };
   return (
     <div className="container" onSubmit={handleSubmit}>
+      <div>
+        <img
+          src="./logo.png"
+          alt="brand-logo"
+          style={{ width: "20em", marginLeft: "25%" }}
+        ></img>
+      </div>
       <form>
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">
@@ -67,6 +74,10 @@ function Login() {
         <button type="submit" className="btn btn-success">
           Login
         </button>
+        <Link to="/createuser" className="m-3 btn btn-outline-success">
+          {" "}
+          Already a user ?
+        </Link>
       </form>
     </div>
   );

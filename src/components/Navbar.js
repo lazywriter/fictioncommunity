@@ -13,7 +13,11 @@ function Navbar() {
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
-            Navbar
+            <img
+              src="./nav-logo.png"
+              alt="Navbar"
+              style={{ height: "4em", width: "8em" }}
+            ></img>
           </Link>
           <button
             className="navbar-toggler"

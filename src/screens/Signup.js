@@ -41,6 +41,13 @@ function Signup() {
 
   return (
     <div className="container" onSubmit={handleSubmit}>
+      <div>
+        <img
+          src="./logo.png"
+          alt="brand-logo"
+          style={{ width: "20em", marginLeft: "25%" }}
+        ></img>
+      </div>
       <form>
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
@@ -97,16 +104,6 @@ function Signup() {
             value={credentials.location}
             onChange={onChange}
           />
-        </div>
-        <div className="mb-3 form-check">
-          <input
-            type="checkbox"
-            className="form-check-input"
-            id="exampleCheck1"
-          />
-          <label className="form-check-label" htmlFor="exampleCheck1">
-            Check me out
-          </label>
         </div>
         <button type="submit" className="btn btn-success">
           Submit

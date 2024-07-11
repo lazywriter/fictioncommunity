@@ -12,66 +12,24 @@ function UserProfile(props) {
                 <div className="card-body text-center">
                   <div className="mt-3 mb-4">
                     <img
-                      src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
+                      src="./user-profile.webp"
                       className="rounded-circle img-fluid"
                       style={{ width: "100px" }}
                     />
                   </div>
                   <h4 className="mb-2">{props.userData.name}</h4>
-                  <p className="text-muted mb-4">
-                    {props.userData.email} <span className="mx-2">|</span>{" "}
-                  </p>
-                  <div className="mb-4 pb-2">
-                    <button
-                      type="button"
-                      data-mdb-button-init
-                      data-mdb-ripple-init
-                      className="btn btn-outline-primary btn-floating"
-                    >
-                      <i className="fab fa-facebook-f fa-lg"></i>
-                    </button>
-                    <button
-                      type="button"
-                      data-mdb-button-init
-                      data-mdb-ripple-init
-                      className="btn btn-outline-primary btn-floating"
-                    >
-                      <i className="fab fa-twitter fa-lg"></i>
-                    </button>
-                    <button
-                      type="button"
-                      data-mdb-button-init
-                      data-mdb-ripple-init
-                      className="btn btn-outline-primary btn-floating"
-                    >
-                      <i className="fab fa-skype fa-lg"></i>
-                    </button>
-                  </div>
+                  <p className="text-muted">{props.userData.email}</p>
+                  <p className="text-muted">{props.userData.location}</p>
                   <Link to="/addbook">
                     <button
                       type="button"
                       data-mdb-button-init
                       data-mdb-ripple-init
-                      className="btn btn-primary btn-rounded btn-lg"
+                      className="btn btn-primary btn-rounded btn-md"
                     >
-                      Add Books for Lending
+                      <h5>Add Book</h5>
                     </button>
                   </Link>
-
-                  <div className="d-flex justify-content-between text-center mt-5 mb-2">
-                    <div>
-                      <p className="mb-2 h5">8471</p>
-                      <p className="text-muted mb-0">Wallets Balance</p>
-                    </div>
-                    <div className="px-3">
-                      <p className="mb-2 h5">8512</p>
-                      <p className="text-muted mb-0">Income amounts</p>
-                    </div>
-                    <div>
-                      <p className="mb-2 h5">4751</p>
-                      <p className="text-muted mb-0">Total Transactions</p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
